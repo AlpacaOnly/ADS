@@ -1,9 +1,11 @@
 package Ass2;
 
+import javax.swing.plaf.IconUIResource;
 import java.util.LinkedList;
 
 public class MyHashTable {
     private LinkedList[] hashtable;
+    private int num;
 
     public class LinkedList {
         String key;
@@ -70,5 +72,21 @@ public class MyHashTable {
         return Math.abs(hashedCode)%hashtable.length;
     }
 
-
+    public void remove(String key) {
+        int i=getIndex(key);
+        if(hashtable[i]==null) return;
+        if (hashtable[i].key.equals(key)) {
+            hashtable[i]=hashtable[i].next;
+            num++; //remove num of items in the table
+            return;
+        }
+        while(hashtable[i].next!=null && !hashtable[i].next.key.equals(key)) {
+            hashtable[i].next=hashtable[i].next.next;
+            hashtable[i]=hashtable[i].next;
+        }
+        if (hashtable[i].next!=null) {
+            hashtable[i].next=hashtable[i].next.next;
+            num--;
+        }
+    }
 }
