@@ -1,3 +1,5 @@
+package Ass1;
+
 public class powerOfn {
     public static void main(String[] args) {
         System.out.println(makePower(2,3));

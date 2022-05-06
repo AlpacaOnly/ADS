@@ -1,3 +1,5 @@
+package Ass1;
+
 public class FibonacciSequence {
     public static void main(String[] args) {
         System.out.println(FibonacciElement(5));

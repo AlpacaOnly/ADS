@@ -1,3 +1,5 @@
+package Ass1;
+
 import java.util.Scanner;
 
 import static java.lang.Math.max;
