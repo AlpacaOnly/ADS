@@ -1,8 +1,5 @@
 package Ass2;
 
-import javax.swing.plaf.IconUIResource;
-import java.util.LinkedList;
-
 public class MyHashTable {
     private LinkedList[] hashtable;
     private int num;
@@ -42,8 +39,12 @@ public class MyHashTable {
         //in case of collision add new entry to the end
         else {
             LinkedList entries=hashtable[i];
-            while(entries.next!=null) {
+            while(entries != null) {
                 //go to the end of list
+                if (entries.key.equals(key)) {
+                    entries.value = value;
+                    return;
+                }
                 entries=entries.next;
             }
             //adding new entry
